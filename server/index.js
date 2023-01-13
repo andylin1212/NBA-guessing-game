@@ -29,13 +29,7 @@ app.get('/refresh', userControllers.handleRefreshToken);
 app.get('/logout', userControllers.handleLogout);
 app.get('/players', playerControllers.handleLoadAllPlayers);
 
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname, '/index.html'), function(err) {
-//     if (err) {
-//       res.status(500).send(err)
-//     }
-//   })
-// })
+
 
 app.use(verifyJWT);
 app.put('/guess-correct', userControllers.handleGuessCorrect);
@@ -43,3 +37,11 @@ app.put('/add-guesses', userControllers.handleAddGuesses)
 app.get('/userRecords', userControllers.getUserRecords)
 app.put('/clear', userControllers.handleClear);
 app.get('/reset', userControllers.handleReset)
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
