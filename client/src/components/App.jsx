@@ -26,25 +26,12 @@ var App = () => {
           </Route>
         {/* </Route> */}
 
-        {/*Catch all essentially a 404 page*/}s
+        {/*Catch all essentially a 404 page*/}
 
 
       </Route>
     </Routes>
-    // <div>
-    //   <nav className='nav-title'>NBA Guessing Game</nav>
-    //   <div>
-    //     <div className='title'>Guess the NBA Player</div>
-    //   </div>
-    //   {view === "login" &&
-    //     <Login />
-    //   }
-    //   {view === "inGame" &&
-    //   <div>
-    //     <div className='search div'><Input handleSubmit={submitGuess} playerNames={playerNames}/></div>
-    //     <div><GuessTable players={allGuesses} correctPlayer={correctAnswer}/></div>
-    //   </div>}
-    // </div>
+
   )
 
 }
