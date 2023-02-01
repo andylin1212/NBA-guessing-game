@@ -25,11 +25,29 @@ Full functionality sign up for with input validation and backend sign-up validat
 
 <img src="./demos/NBA_signup.gif" height=200 />
 
+### Login
+Users can log in to access previous user guesses and high scores.
+Login input and backend validation implemented with protected routes
+
+<img src="./demos/NBA_login.gif" height=200 />
+
+### Main Game
+Once logged in, users have 8 tries to guess a random player.
+Users can view a blacked-out mugshot of the player as a hint. After every guess, hints will be provided based on how close your guess is to the correct player.
+
+<img src="./demos/NBA_main.gif" height=200 />
+
+### User Progress Retention
+Users can sign out at any time and current progress will be stored.
+Previous guesses would be rendered if users sign out before guessing the right answers
+
+<img src="./demos/NBA_saveUserProgress.gif" height=200 />
+
 
 ## Installation & Use
 1. Clone the repo
     ```
-    git clone https://github.com/andylin1212/CrashCourse.git
+    git clone https://github.com/andylin1212/CrashCourse.git](https://github.com/andylin1212/NBA-guessing-game.git
     ```
 2. Install all required packages in both client and server folders
     ```
@@ -37,12 +55,12 @@ Full functionality sign up for with input validation and backend sign-up validat
     ```
 3. Create a .env file in the server folder
 
-4. Compile the client-side code and start Metro Bundler
+4. Compile the client-side code
    ```
-   npm start
+   npm run client-dev
    ```
-5. Scan the QR code from Metro Bundler in Terminal
-6. Start the server
+5. Start the server
    ```
    npm run server-dev
    ```
+6. Sign up, log in and guess away
