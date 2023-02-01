@@ -19,7 +19,10 @@ Custom JWT middleware and cookie handling for built-from-scratch user authentica
 
 
 ## Component Details
+### Sign-Up
 
+
+<!-- <img src="./demos/initialSearch_Summary-Aliens_MOV_AdobeExpress.gif" height=500 /> -->
 
 
 ## Installation & Use
