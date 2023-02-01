@@ -22,7 +22,7 @@ Custom JWT middleware and cookie handling for built-from-scratch user authentica
 ### Sign-Up
 
 
-<img src="./demos/NBA_signupUpdated.gif" height=500 />
+<img src="./demos/NBA_signupUpdated.gif" height=300 width=300 />
 
 
 ## Installation & Use
