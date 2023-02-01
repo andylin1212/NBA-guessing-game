@@ -23,7 +23,7 @@ Custom JWT middleware and cookie handling for built-from-scratch user authentica
 Users need to sign up for account before login to access user records.
 Full functionality sign up for with input validation and backend sign-up validation.
 
-<img src="./demos/NBA_signup_AdobeExpress.gif" height=200 />
+<img src="./demos/NBA_signup.gif" height=200 />
 
 
 ## Installation & Use
