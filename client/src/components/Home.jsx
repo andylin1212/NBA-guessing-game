@@ -24,6 +24,7 @@ const Home = () => {
   const [isHintShowing, setIsHintShowing] = useState(false);
 
   const axiosAuthed = useAxiosAuthed();
+  const navigate = useNavigate();
 
   function addGuess(guessPlayer) {
     //guessPlayer should be array containing 1 player object
@@ -40,7 +41,6 @@ const Home = () => {
   };
 
   async function submitGuess (guessName) {
-
     //if already guessed
     if (allGuesses.filter((obj) => {
       return obj.Fullname.toLowerCase() === guessName.toLowerCase();
@@ -84,13 +84,19 @@ const Home = () => {
     }
   };
 
+  async function handleLogout(e) {
+    e.preventDefault();
+    await axiosAuthed.get('/logout')
+    navigate('/login')
+  };
+
   function randomizeCorrectAnswer() {
     var max = playerDatabase.length;
     var index = Math.floor(Math.random() * max);
     setCorrectAnswer(playerDatabase[index]);
   };
 
-  const initialLoad = async () => {
+  async function initialLoad () {
     //if no playerDB in localStorage, run initial load
     if (!localStorage.allplayers) {
       console.log('reload storage')
@@ -139,33 +145,14 @@ const Home = () => {
   };
 
   useEffect(()=> {
-   // searchNBAstats((response) => {
-      //     playerDatabase = response;
-      //     console.log(playerDatabase);
-      //   }); (need to put below in callback too)
-
-    //if all players not stored locally, store players
     initialLoad();
-
-
-    // var example = exampleNBAdata.slice(0, 7);//need to comment this
-    // setAllGuesses(example) //need to uncommnet this only for test
-    // setCorrectAnswer(example[0]);
-    // // randomizeCorrectAnswer(); need to uncomment for actual
-    // setPlayerNames(["Bradley Beal", "John Wall", "Otto Porter Jr.", "Garrett Temple", "Terrence Ross", "Jonas Valanciunas", "Demar Derozan"]);
-
-    // console.log(playerNames);
   },[]);
 
 
-//need to uncomment this!
-  // useEffect(()=>{
-  //   console.log(allGuesses);
-  //   console.log(count);
-  // }, [allGuesses]);
 
   return (
     <div className="home-container container" >
+      <button className="signout-button" onClick={handleLogout}>Sign Out</button>
       <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       <div className={ifSuccess === "unsure" ? 'search-form-container' : "offscreen" }>
         <Input handleSubmit={submitGuess} playerNames={playerNames} count={count}/>
@@ -173,11 +160,11 @@ const Home = () => {
       <button className="hint" onClick={() => setIsHintShowing(true)}>Need a quick hint?</button>
       <p className={ifSuccess === "yes" ? "correct-message" : "offscreen"} aria-live="assertive">
         Guessed Correct!
-        <button onClick={reset}>Close</button>
+        <button className="next-button" onClick={reset}>Next</button>
       </p>
       <p className={ifSuccess === "no" ? "correct-message" : "offscreen"} aria-live="assertive">
         Sorry. You didnt get it this time!
-        <button onClick={reset}>Try again</button>
+        <button className="next-button" onClick={reset}>Try again</button>
       </p>
       <GuessTable players={allGuesses} correctPlayer={correctAnswer}/>
       <div className={isHintShowing ? "hint-overlay" : "hint-overlay-hidden"}>

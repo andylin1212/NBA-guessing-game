@@ -8,13 +8,10 @@ const GuessTableRow = ({player, correctPlayer}) => {
   var wrongStyle = {backgroundColor : "#EF476F", color : 'white'};
   var closeStyle = {backgroundColor : "#FFD166", color : 'black'};
 
-  // var correctStyle = {backgroundColor : "#B3FFAE", color : 'black'};
-  // var wrongStyle = {backgroundColor : "#FF7D7D", color : 'white'};
-  // var closeStyle = {backgroundColor : "#F8FFDB", color : 'black'};
-
   var ifCorrectPlayer = player === correctPlayer;
-  var ifCorrectTeam = player.Team === correctPlayer.Team;
-  var ifCorrectConf = player.Team === correctPlayer.Team;
+  var ifCorrectTeam = player.Team == correctPlayer.Team;
+  var ifCorrectConf = player.Conference == correctPlayer.Conference;
+
 
   function determineDivStyle(player, correctPlayer) {
     if (player.Division === correctPlayer.Division) {

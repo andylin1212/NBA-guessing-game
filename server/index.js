@@ -26,7 +26,6 @@ app.listen(PORT, function() {
 app.post('/login', userControllers.handleLogin);
 app.post('/signup', userControllers.handleNewUser);
 app.get('/refresh', userControllers.handleRefreshToken);
-app.get('/logout', userControllers.handleLogout);
 app.get('/players', playerControllers.handleLoadAllPlayers);
 
 
@@ -37,6 +36,7 @@ app.put('/add-guesses', userControllers.handleAddGuesses)
 app.get('/userRecords', userControllers.getUserRecords)
 app.put('/clear', userControllers.handleClear);
 app.get('/reset', userControllers.handleReset)
+app.get('/logout', userControllers.handleLogout);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'), function(err) {

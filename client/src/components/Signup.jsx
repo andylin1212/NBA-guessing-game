@@ -49,7 +49,6 @@ const Signup = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post('/signup', {username, pwd},
       {
@@ -73,6 +72,7 @@ const Signup = () => {
       }
       errRef.current.focus();
     }
+
   }
 
   return (
