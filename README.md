@@ -1,5 +1,7 @@
 # NBA Guessing Game
-
+An addictive game that allows users to guess NBA players' names in 8 tries. With every failed guess, additional hints would be provided.<br />
+Users can login to keep track of high scores and previous guesses.<br />
+Custom JWT middleware and cookie handling for built-from-scratch user authentication and session handling. Clean UI for the front end with layered protection on routes and user navigation using custom hooks, Axios interceptors nad react routes.
 
 
 ## Tech Stack
